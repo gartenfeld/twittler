@@ -19,7 +19,7 @@ var addTweet = function(newTweet){
   streams.users[username].push(newTweet); // Adding to user timeline
   streams.home.push(newTweet); // Adding to all tweets
   // Update display
-  refreshPage();
+  updatePage(current);
 };
 
 // utility function
@@ -60,22 +60,7 @@ var scheduleNextTweet = function(){
   setTimeout(scheduleNextTweet, Math.random() * 2000 + 1000);
 };
 
-var refreshPage = function(){
-  var $body = $('body');
-  $body.html('');
-  var index = streams.home.length - 1;
-  while(index >= 0){
-    var tweet = streams.home[index];
-    var $tweet = $('<div></div>');
-    $tweet.text('@' + tweet.user + ': ' + tweet.message);
-    $tweet.appendTo($body);
-    index -= 1;
-  }
-};
-
 generateInitialContent();
-
-
 
 // utility function for letting students add "write a tweet" functionality
 // (note: not used by the rest of this file.)
