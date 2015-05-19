@@ -57,7 +57,7 @@ var generateInitialContent = function(){
 
 var scheduleNextTweet = function(){
   generateRandomTweet();
-  setTimeout(scheduleNextTweet, Math.random() * 2000 + 1000);
+  setTimeout(scheduleNextTweet, Math.random() * 1000 + 500);
 };
 
 generateInitialContent();

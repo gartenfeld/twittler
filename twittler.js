@@ -20,7 +20,8 @@ var updatePage = function(whose) {
     while(index >= 0){
     var tweet = contents[index];
     var click = 'onclick=\"updatePage\(\'' + tweet.user + '\'\)\"';
-    var link = '<div class="tweet"><a href="#"' + click + ' >@'+tweet.user+'</a>: ' + tweet.message +'</div>';
+    var timeStamp = ' <div class="time-stamp">' + tweet.created_at + '</div>'
+    var link = '<div class="tweet"><a href="#"' + click + ' >@'+tweet.user+'</a>: ' + tweet.message + timeStamp +'</div>';
     var $tweet = $(link);
     $tweet.appendTo($stage);
     index -= 1;
